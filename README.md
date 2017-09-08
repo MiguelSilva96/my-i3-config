@@ -23,8 +23,11 @@ Software:
  * gawk
 
 ## Screenshots
+### Multiple windows open
 ![alt text](screenshots/multipleOpen.png "Multiple windows open")
+### Dunst Notification example
 ![alt text](screenshots/screenNotif.png "Dunst Notification example")
+### Spotify is off and caps lock is on
 ![alt text](screenshots/capsAndOffspot.png "Spotify off and Caps on")
 
 ## Note:
