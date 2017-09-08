@@ -29,6 +29,8 @@ Software:
 ![alt text](screenshots/screenNotif.png "Dunst Notification example")
 ### Spotify is off and caps lock is on
 ![alt text](screenshots/capsAndOffspot.png "Spotify off and Caps on")
+### Using rofi to launch a program
+![alt text](screenshots/rofi.png "Rofi")
 
 ## Note:
 	In order to prevent power key from shutting down the system, 
