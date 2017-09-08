@@ -10,12 +10,8 @@ Fonts used:
 
 Software:
 
- * i3-gaps
- * i3lock
- * i3blocks
- * scrot
- * rofi
- * feh
+ * i3-gaps, i3lock, i3blocks
+ * scrot, rofi, feh
  * pulseaudio
  * xbacklight
  * conky
@@ -23,6 +19,7 @@ Software:
  * unclutter
  * playerctl
  * redshift
+ * dunst
  * gawk
 
 In order to prevent power key from shutting down the system, 
