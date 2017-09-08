@@ -22,3 +22,5 @@ Software:
  * compton
  * unclutter
  * playerctl
+ * redshift
+ * gawk
