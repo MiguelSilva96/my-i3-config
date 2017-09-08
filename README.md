@@ -22,7 +22,13 @@ Software:
  * dunst
  * gawk
 
-In order to prevent power key from shutting down the system, 
-I edited the file /etc/systemd/logind.conf
-uncommented #HandlePowerKey=poweroff line and changed it to
-HandlePowerKey=ignore
+## Screenshots
+![alt text](screenshots/multipleOpen.png "Multiple windows open")
+![alt text](screenshots/screenNotif.png "Dunst Notification example")
+![alt text](screenshots/capsAndOffspot.png "Spotify off and Caps on")
+
+## Note:
+	In order to prevent power key from shutting down the system, 
+	I edited the file /etc/systemd/logind.conf
+	uncommented #HandlePowerKey=poweroff line and changed it to
+	HandlePowerKey=ignore
