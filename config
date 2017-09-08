@@ -11,7 +11,7 @@ set $ws1 1:
 set $ws2 2:
 set $ws3 3:
 
-set $sysmenu "system:  [r]eload  [l]ogout  [p]oweroff  re[b]oot"
+set $sysmenu "system:  [r]eload  [l]ogout  [p]oweroff [s]uspend re[b]oot"
 
 
 # Disable window titlebars entirely
@@ -228,6 +228,8 @@ mode $sysmenu {
     bindsym l         exit
     bindsym p         exec shutdown -P now
     bindsym b         exec shutdown -r now
+    bindsym s         mode "default" exec i3lock -i ~/Imagens/tux.png & \
+                           systemctl suspend
     bindsym Return    mode "default"
     bindsym Escape    mode "default"
 }
