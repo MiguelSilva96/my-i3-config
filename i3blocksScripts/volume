@@ -56,7 +56,21 @@ format() {
   # If dB was selected, print that instead
   perl_filter+=$([[ $STEP = *dB ]] && echo '$3' || echo '$1')
   perl_filter+='"; exit}'
-  perl -ne "$perl_filter"
+  VOLUME=`perl -ne "$perl_filter"`
+  
+  #Treat info to output sound icon based on how loud it is
+  IFS='%' read -r -a array <<< "$VOLUME"
+  VOLUME=${array[0]}
+
+  if [ $VOLUME -ge 50 ]
+  then
+  	echo " $VOLUME%"
+  elif [ $VOLUME -gt 0 ]
+	then
+		echo " $VOLUME%"
+	else 
+		echo " $VOLUME"
+	fi
 }
 
 #------------------------------------------------------------------------
