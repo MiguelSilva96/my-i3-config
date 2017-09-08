@@ -24,3 +24,8 @@ Software:
  * playerctl
  * redshift
  * gawk
+
+In order to prevent power key from shutting down the system, 
+I edited the file /etc/systemd/logind.conf
+uncommented #HandlePowerKey=poweroff line and changed it to
+HandlePowerKey=ignore

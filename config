@@ -161,6 +161,9 @@ bindsym $mod+a focus parent
 assign [class="Gnome-terminal"] $ws1
 assign [class="Chromium"] $ws2
 assign [class="Spotify"] $ws3
+# Spotify isn’t setting the hints when mapping the window.
+# So the assignment doesn't work, using this instead:
+for_window [class="Spotify"] move to workspace $ws3
 
 # switch to workspace
 bindsym $mod+1 workspace $ws1
