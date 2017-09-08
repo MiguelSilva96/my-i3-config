@@ -1,0 +1,43 @@
+#!/bin/bash
+# Silva
+
+USB_OUTPUT="alsa_output.usb-GeneralPlus_USB_Audio_Device-00.analog-stereo"
+
+#Used to limit max volume to 100%, getting current volume
+CURRENT_VOLUME=`amixer sget Master | grep 'Playback' | \
+				tail -1 | gawk 'BEGIN{FS="[[%]"} { print($2) }'`
+
+#If you want, the script receives step on second argument
+#It has to be like: ./volume.sh up 10
+COMMAND="${1:-NADA}"
+STEP="${2:-5}"
+
+#Script receives action in first argument
+if [ $COMMAND == "up" ]
+then 
+	#increase sound volume
+	let "DIFF = 100 - ($CURRENT_VOLUME + $STEP)"
+	if [ $DIFF -ge 0 ]
+	then
+		pactl set-sink-volume @DEFAULT_SINK@ +${STEP}%
+	else
+		pactl set-sink-volume @DEFAULT_SINK@ 100%
+	fi
+elif [ $COMMAND == "down" ]
+then
+	#decrease sound volume
+	pactl set-sink-volume @DEFAULT_SINK@ -${STEP}%
+elif [ $COMMAND == "mute" ]
+	then
+	pactl set-sink-mute @DEFAULT_SINK@ toggle
+else
+	#I use this because I have a usb sound card
+	#So I change sinks this way
+	if [ $COMMAND == "sink" ]
+	then
+		pactl set-default-sink $USB_OUTPUT
+	fi
+fi
+
+#signal i3blocks to update info on the bar
+pkill -SIGRTMIN+10 i3blocks
