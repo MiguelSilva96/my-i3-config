@@ -19,7 +19,7 @@ for_window [class="^.*"] border pixel 1
 
 # Set inner/outer gaps
 gaps inner 6
-gaps outer 3
+gaps outer 1
 
 # This is useful to bind keys to changing the gap size.
 # gaps inner|outer current|all set|plus|minus <px>
