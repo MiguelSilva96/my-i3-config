@@ -9,7 +9,8 @@
 set $mod Mod4
 set $ws1 1:
 set $ws2 2:
-set $ws3 3:
+set $ws3 3:
+set $ws4 4:
 
 set $sysmenu "system:  [r]eload  [l]ogout  [p]oweroff [s]uspend re[b]oot"
 
@@ -161,6 +162,7 @@ bindsym $mod+a focus parent
 assign [class="Gnome-terminal"] $ws1
 assign [class="Chromium"] $ws2
 assign [class="Spotify"] $ws3
+assign [class="Slack"] $ws4
 # Spotify isn’t setting the hints when mapping the window.
 # So the assignment doesn't work, using this instead:
 for_window [class="Spotify"] move to workspace $ws3
@@ -169,7 +171,7 @@ for_window [class="Spotify"] move to workspace $ws3
 bindsym $mod+1 workspace $ws1
 bindsym $mod+2 workspace $ws2
 bindsym $mod+3 workspace $ws3
-bindsym $mod+4 workspace 4
+bindsym $mod+4 workspace $ws4
 bindsym $mod+5 workspace 5
 bindsym $mod+6 workspace 6
 bindsym $mod+7 workspace 7
@@ -181,7 +183,7 @@ bindsym $mod+0 workspace 10
 bindsym $mod+Shift+1 move container to workspace $ws1
 bindsym $mod+Shift+2 move container to workspace $ws2
 bindsym $mod+Shift+3 move container to workspace $ws3
-bindsym $mod+Shift+4 move container to workspace 4
+bindsym $mod+Shift+4 move container to workspace $ws4
 bindsym $mod+Shift+5 move container to workspace 5
 bindsym $mod+Shift+6 move container to workspace 6
 bindsym $mod+Shift+7 move container to workspace 7
@@ -289,6 +291,9 @@ exec --no-startup-id synclient VertEdgeScroll=1 TapButton1=1 TapButton2=1 \
 #network manager applet
 exec --no-startup-id nm-applet
 
+#sticky notes
+exec --no-startup-id indicator-stickynotes
+
 #start unclutter(hides mouse)
 exec --no-startup-id unclutter -idle 5
 
@@ -303,6 +308,7 @@ exec --no-startup-id conky
 #Start some programs
 exec --no-startup-id i3-sensible-terminal
 exec --no-startup-id chromium
+exec --no-startup-id slack
 #exec --no-startup-id spotify
 
 
