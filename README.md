@@ -21,6 +21,7 @@ Software:
  * redshift
  * dunst
  * gawk
+ * indicator-stickynotes
 
 ## Screenshots
 ### Multiple windows open
